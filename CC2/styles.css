@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* Global Styles */
+body {
+    background-color: #1a1a2e;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    padding: 20px;
+    border-radius: 1em;
+    height: 500px;
+    width: 420px;
+    margin: auto;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Display Box */
+.display-box {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #dcdbe1;
+    border: solid 2px #333;
+    color: #000;
+    border-radius: 10px;
+    width: 100%;
+    height: 80px;
+    text-align: right;
+    font-size: 2.5em;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Button Styles */
+input[type=button] {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #64278f;
+    color: white;
+    border: solid 1px #4b2a76;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type=button]:hover {
+    background-color: #fb0066;
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+input:active[type=button] {
+    background-color: #ff3366;
+    transform: scale(1.05);
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type=button].operator {
+    background-color: #4a90e2;
+    color: white;
+}
+
+input[type=button].operator:hover {
+    background-color: #0061e2;
+}
+
+input[type=button].equal {
+    background-color: #fb0066;
+    color: white;
+    width: 180px;
+    grid-column: span 2;
+}
+
+input[type=button].equal:hover {
+    background-color: #ff3366;
+}
+
+/* Button Layout */
+#btn {
+    background-color: #fb0066;
+}
+
+/* Keypad Grid */
+#table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .calculator {
+        width: 100%;
+        height: auto;
+    }
+    .display-box {
+        font-size: 2em;
+        height: 60px;
+    }
+    input[type=button] {
+        font-size: 1.2em;
+        height: 60px;
+        width: 60px;
+    }
+}
